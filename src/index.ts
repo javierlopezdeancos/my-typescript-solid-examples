@@ -92,3 +92,24 @@ liskovSubstitutionPrintSeatsWrong(liskovSubstitutionBrandCars);
 // ✔️ Good example
 console.log("✔️");
 liskovSubstitutionPrintSeatsOk(liskovSubstitutionBrandCars);
+
+
+const solidSectionINode = document.getElementById('I');
+
+if (solidSectionINode) {
+  solidSectionINode.innerHTML = `
+    <header>
+      <h2>I: Principio de segregación de interfaz</h2>
+    </header>
+    <main>
+      <p>
+        Este principio establece que los clientes no deberían verse forzados a depender de interfaces que no usan.
+      </p>
+      <p>
+        Dicho de otra manera, cuando un cliente depende de una clase que implementa una interfaz cuya funcionalidad
+        este cliente no usa, pero que otros clientes sí usan, este cliente estará siendo afectado por los cambios
+        que fuercen otros clientes en dicha interfaz.
+      </p>
+    </main>
+  `;
+}
