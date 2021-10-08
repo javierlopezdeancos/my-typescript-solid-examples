@@ -1,6 +1,7 @@
 # 💎 S OF SOLID (SINGLE RESPONSIBILITY)
 
 ## ❌ BAD EXAMPLE
+
 > Class should have one responsabilitiy in this case
 only build a car with their characteristics but not
 have any log method in console, this should be other
@@ -31,6 +32,7 @@ export class CarWrong {
 ```
 
 ## ✔️ GOOD EXAMPLE
+
 > In this case we have two classes with splited responsabilies.
   CarLogger has the responsability to log in console some actions
   to car injected by params.

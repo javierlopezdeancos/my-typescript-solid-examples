@@ -1,10 +1,20 @@
-import { CarWrong, CarOk, CarLogger } from './S';
+import {
+  CarWrong as SingleResponsibilityCarWrong,
+  CarOk as SingleResponsibilityCarOk,
+  CarLogger as SingleResponsibilityCarLogger
+} from './S';
+import {
+  cars as openCloseCars,
+  printAveragePriceWrong as openClosePrintAveragePriceWrong,
+  brandCars as openCloseBrandCars,
+  printAveragePriceOk as openClosePrintAveragePriceOk,
+} from './O';
 
 // 💎 S OF SOLID (SINGLE RESPONSIBILITY)
-const solidSectionNode = document.getElementById('S');
+const solidSectionSNode = document.getElementById('S');
 
-if (solidSectionNode) {
-  solidSectionNode.innerHTML = `
+if (solidSectionSNode) {
+  solidSectionSNode.innerHTML = `
     <header>
       <h2>S: Principio de responsabilidad única</h2>
     </header>
@@ -15,14 +25,38 @@ if (solidSectionNode) {
 }
 
 // ❌ Wrong example
-const myCarWrong = new CarWrong("Mercedes", "Blue");
+const myCarWrong = new SingleResponsibilityCarWrong("Mercedes", "Blue");
 
 console.log("❌");
 myCarWrong.description();
 
 // ✔️ Good example
-const myCarOk = new CarOk("Mercedes", "Blue");
-const myCarLogger = new CarLogger(myCarOk);
+const myCarOk = new SingleResponsibilityCarOk("Mercedes", "Blue");
+const myCarLogger = new SingleResponsibilityCarLogger(myCarOk);
 
 console.log("✔️");
 myCarLogger.description();
+
+// 💎 O OF SOLID (OPEN CLOSED PRINCIPLE)
+const solidSectionONode = document.getElementById('O');
+
+if (solidSectionONode) {
+  solidSectionONode.innerHTML = `
+    <header>
+      <h2>O: Principio abierto/cerrado</h2>
+    </header>
+    <section>
+      <p>
+        Establece que las entidades software (clases, módulos y funciones) deberían estar abiertos para su extensión, pero cerrados para su modificación.
+      </p>
+    </section>
+  `;
+}
+
+// ❌ Wrong example
+console.log("❌");
+openClosePrintAveragePriceWrong(openCloseCars);
+
+// ✔️ Good example
+console.log("✔️");
+openClosePrintAveragePriceOk(openCloseBrandCars);
