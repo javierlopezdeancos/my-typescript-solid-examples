@@ -1,9 +1,10 @@
 # 💎 O OF SOLID (OPEN CLOSE)
 
+The software entities (class, modules and functions should be open to extend, but close to be modify.
+
 ## ❌ BAD EXAMPLE
 
-> The software entities (class, modules and functions)
-  should be open to extend, but close to be modify.
+> This function is not ready to extend another brand into cars array, then we should modify with other if printAveragePriceWrong funtion.
 
 ```ts
 class Car {
@@ -30,9 +31,6 @@ export const cars: Car[] = [
   new Car("Peugeot", "Yellow")
 ];
 
-// this function is not ready to extend another brand into cars array,
-// then we should modify
-// with other if printAveragePriceWrong funtion.
 export function printAveragePriceWrong(cars: Car[]): void {
   for (let c = 0; c <= Car.length; c++) {
     const car = cars[c];

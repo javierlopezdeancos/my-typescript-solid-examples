@@ -9,6 +9,11 @@ import {
   brandCars as openCloseBrandCars,
   printAveragePriceOk as openClosePrintAveragePriceOk,
 } from './O';
+import {
+  brandCars as liskovSubstitutionBrandCars,
+  printSeatsWrong as liskovSubstitutionPrintSeatsWrong,
+  printSeatsOk as liskovSubstitutionPrintSeatsOk,
+} from './L';
 
 // 💎 S OF SOLID (SINGLE RESPONSIBILITY)
 const solidSectionSNode = document.getElementById('S');
@@ -21,7 +26,7 @@ if (solidSectionSNode) {
     <section>
       <p>Como su propio nombre indica, establece que una clase, componente o microservicio debe ser responsable de una sola cosa (el tan aclamado término “decoupled” en inglés). Si por el contrario, una clase tiene varias responsabilidades, esto implica que el cambio en una responsabilidad provocará la modificación en otra responsabilidad.</p>
     </section>
-`;
+  `;
 }
 
 // ❌ Wrong example
@@ -60,3 +65,30 @@ openClosePrintAveragePriceWrong(openCloseCars);
 // ✔️ Good example
 console.log("✔️");
 openClosePrintAveragePriceOk(openCloseBrandCars);
+
+// 💎 L OF SOLID (LISKOV SUBSTITUTION PRINCIPLE)
+const solidSectionLNode = document.getElementById('L');
+
+if (solidSectionLNode) {
+  solidSectionLNode.innerHTML = `
+    <header>
+      <h1>L: Principio de substitución de Liskov</h1>
+    </header>
+    <main>
+      <p>
+        Declara que una subclase debe ser sustituible por su super clase, y si al hacer esto, el programa falla, estaremos violando este principio.
+      </p>
+      <p>
+        Cumpliendo con este principio se confirmará que nuestro programa tiene una jerarquía de clases fácil de entender y un código reusable.
+      </p>
+    </main>
+  `;
+}
+
+// ❌ Wrong example
+console.log("❌");
+liskovSubstitutionPrintSeatsWrong(liskovSubstitutionBrandCars);
+
+// ✔️ Good example
+console.log("✔️");
+liskovSubstitutionPrintSeatsOk(liskovSubstitutionBrandCars);
