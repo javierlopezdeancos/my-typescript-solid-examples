@@ -3,7 +3,7 @@
 // on interface, all the above three principles applies on classes.
 // Let’s take following example to understand this principle.
 
-// ❌ As we can see in this example, Parrot not swim, the penguin not fly and the toucan can't siwm.
+// ❌ As we can see in this example, Parrot not swim, the penguin not fly and the toucan can't swim.
 //    Client classes are depending on all methods from IBird that not use.
 
 interface IBird {
@@ -64,7 +64,7 @@ interface IFlyBird extends IBirdOk {
   fly: () => void;
 }
 
-interface SwimBird extends IBirdOk {
+interface ISwimBird extends IBirdOk {
   swim: () => void;
 }
 
@@ -88,7 +88,7 @@ class ToucanOk implements IFlyBird {
   }
 }
 
-class PenguinOk implements SwimBird {
+class PenguinOk implements ISwimBird {
   public eat() {
     //..
   }

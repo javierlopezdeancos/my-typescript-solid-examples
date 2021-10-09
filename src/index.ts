@@ -83,7 +83,7 @@ if (solidSectionLNode) {
     </header>
     <main>
       <p>
-        Declara que una subclase debe ser sustituible por su super clase, y si al hacer esto, el programa falla, estaremos violando este principio.
+        Declara que una clase debe ser sustituible por su sub clase que extiende de ella.
       </p>
       <p>
         Cumpliendo con este principio se confirmará que nuestro programa tiene una jerarquía de clases fácil de entender y un código reusable.
