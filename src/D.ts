@@ -2,11 +2,11 @@
 // but not on concretion”. What does it mean that we should be having
 // object of interface which helps us to communicate with the concrete
 // classes.What do we gain from this is, we hide the actual
-//  implementation of class A from the class B. So if class A changes
-//  the class B doesn’t need to care or know about the changes.
+// implementation of class A from the class B. So if class A changes
+// the class B doesn’t need to care or know about the changes.
 
-// ❌ In this example our hight level module (GetService) depends from a low level module
-//    (DatabaseService), should be the opsite direction of dependency.
+// ❌ In this example our hight level module (GetServiceWrong) depends from a low level module
+//    (DatabaseServiceWrong), should be the oposite direction of dependency.
 
 export class DatabaseServiceWrong {
   //...
@@ -39,7 +39,7 @@ export class DatabaseServiceOk implements DataSource {
   }
 }
 
-export class APIService implements DataSource {
+export class APIServiceOk implements DataSource {
   //...
   public getNames(): string[] {
     return ["Frank", "James"];

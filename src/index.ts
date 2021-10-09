@@ -18,7 +18,7 @@ import {
   DatabaseServiceWrong as DependencyInversionDatabaseServiceWrong,
   GetServiceWrong as DependencyInversionGetServiceWrong,
   DatabaseServiceOk as DependencyInversionDatabaseServiceOk,
-  APIService as DependencyInversionAPIService,
+  APIServiceOk as DependencyInversionAPIServiceOk,
   GetServiceOk as DependencyInversionGetServiceOk,
 } from './D';
 
@@ -151,18 +151,18 @@ if (solidSectionDNode) {
 // ❌ Wrong example
 console.log("❌");
 
-const databaseService = new DependencyInversionDatabaseServiceWrong();
-const get = new DependencyInversionGetServiceWrong(databaseService);
+const dependencyInversionDatabaseService = new DependencyInversionDatabaseServiceWrong();
+const dependencyInversionGetServiceWrong = new DependencyInversionGetServiceWrong(dependencyInversionDatabaseService);
 
-console.log(get.names());
+console.log(dependencyInversionGetServiceWrong.names());
 
 // ✔️ Good example
-const apiService = new DependencyInversionAPIService();
+const apiServiceOK = new DependencyInversionAPIServiceOk();
 const databaseServiceOk = new DependencyInversionDatabaseServiceOk();
 
-const getOk1 = new DependencyInversionGetServiceOk(apiService);
-const getOk2 = new DependencyInversionGetServiceOk(databaseServiceOk);
+const dependencyInversionGetServiceFromApiOk = new DependencyInversionGetServiceOk(apiServiceOK);
+const dependencyInversionGetServiceFromDatabaseOk = new DependencyInversionGetServiceOk(databaseServiceOk);
 
 console.log("✔️");
-console.log(getOk1.names());
-console.log(getOk2.names());
+console.log(dependencyInversionGetServiceFromApiOk.names());
+console.log(dependencyInversionGetServiceFromDatabaseOk.names());
