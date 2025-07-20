@@ -1,13 +1,13 @@
 # 💎 S OF SOLID (SINGLE RESPONSIBILITY)
 
-The name itself suggest that the “class should be having one and only one responsibility”.
+The name itself suggest that the “class should be having one and only responsibility”.
 
 ## ❌ BAD EXAMPLE
 
-> Class should have one responsabilitiy in this case
+> Class should have one responsibility in this case
 only build a car with their characteristics but not
 have any log method in console, this should be other
-responsability.
+responsibility.
 
 ```ts
 export class CarWrong {
@@ -35,8 +35,8 @@ export class CarWrong {
 
 ## ✔️ GOOD EXAMPLE
 
-> In this case we have two classes with splited responsabilies.
-  CarLogger has the responsability to log in console some actions
+> In this case we have two classes with split responsibilities.
+  `CarLogger` has the responsibility to log in console some actions
   to car injected by params.
 
 ```ts

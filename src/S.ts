@@ -1,8 +1,8 @@
 
-// ❌ Class should have one responsabilitiy in this case
+// ❌ Class should have one responsibility in this case
 //    only build a car with their characteristics but not
 //    have any log method in console, this should be other
-//    responsability.
+//    responsibility.
 
 export class CarWrong {
   private _wheels: string = "4";
@@ -26,8 +26,8 @@ export class CarWrong {
   }
 }
 
-// ✔️ In this case we have two classes with splited responsabilies.
-//    CarLogger has the responsability to log in console some actions
+// ✔️ In this case we have two classes with split responsibilities.
+//    CarLogger has the responsibility to log in console some actions
 //    to car injected by params.
 
 export class CarOk {
