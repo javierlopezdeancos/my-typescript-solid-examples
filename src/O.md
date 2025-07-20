@@ -4,7 +4,7 @@ The software entities (class, modules and functions should be open to extend, bu
 
 ## ❌ BAD EXAMPLE
 
-> This function is not ready to extend another brand into cars array, then we should modify with other if printAveragePriceWrong funtion.
+> This function is not ready to extend another brand into cars array, then we should modify with other if `printAveragePriceWrong` function.
 
 ```ts
 class Car {
@@ -35,7 +35,7 @@ export function printAveragePriceWrong(cars: Car[]): void {
   for (let c = 0; c <= Car.length; c++) {
     const car = cars[c];
 
-    if (car.brand === "Mercedes") {
+    if (car.brand === "Mercedes")
       console.log(18000);
     } else if (car.brand === "Citroen") {
       console.log(25000);
@@ -47,9 +47,10 @@ export function printAveragePriceWrong(cars: Car[]): void {
 ```
 
 ## ✔️  GOOD EXAMPLE
-  > In this case we have two classes with splited responsabilies.
-    `CarLogger` has the responsability to log in console some actions
-    to car injected by params.
+
+  > In this case we have two classes with split responsibilities.
+  `CarLogger` has the responsibility to log in console some actions
+  to car injected by params.
 
 ```ts
 interface IBrandCar extends Car {
@@ -98,8 +99,8 @@ export const brandCars: IBrandCar[] = [
   new Peugeot("Yellow")
 ];
 
-// This is ready to extend brandCars with other brand car
-// without need to t ouch any line in printAveragePriceOk funtion
+// This is ready to extend brandCars with other brand cars
+// without need to touch any line in `printAveragePriceOk` function
 export function printAveragePriceOk(cars: IBrandCar[]): void {
   for (let c = 0; c < brandCars.length; c++) {
     const car = brandCars[c];
