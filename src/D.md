@@ -1,6 +1,6 @@
 # 💎 D OF SOLID (DEPENDENCY INVERSION PRINCIPLE)
 
-This principle suggest that “classes should depend on abstraction but not on concretion”. What does it mean that we should be having object of interface which helps us to communicate with the concrete classes.What do we gain from this is, we hide the actual implementation of class A from the class B. So if class A changes the class B doesn’t need to care or know about the changes.
+This principle suggest that *“classes should depend on abstraction but not on concretion”*. What does it mean that we should be having object of interface which helps us to communicate with the concrete classes. What do we gain from this is, we hide the actual implementation of class A from the class B. So if class A changes the class B doesn’t need to care or know about the changes.
 
 ## ❌ BAD EXAMPLE
 
