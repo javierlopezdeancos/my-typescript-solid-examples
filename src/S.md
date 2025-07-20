@@ -1,6 +1,6 @@
 # 💎 S OF SOLID (SINGLE RESPONSIBILITY)
 
-The name itself suggest that the “class should be having one and only responsibility”.
+The name itself suggest that the *“class should be having one and only responsibility”*.
 
 ## ❌ BAD EXAMPLE
 

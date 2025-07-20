@@ -1,6 +1,6 @@
 # 💎 O OF SOLID (OPEN CLOSE)
 
-The software entities (class, modules and functions should be open to extend, but close to be modify.
+This principle suggests that *"software entities (class, modules and functions should be open to extend, but close to be modify"*.
 
 ## ❌ BAD EXAMPLE
 

@@ -1,6 +1,6 @@
 # 💎 L OF SOLID (LISKOV SUBSTITUTION)
 
-This principle suggests that “parent classes should be easily substituted with their child classes without blowing up the application”.
+This principle suggests that *“parent classes should be easily substituted with their child classes without blowing up the application”*.
 
 ```ts
 class Car {
@@ -90,7 +90,7 @@ function printPeugeotSeats(peugeot: Peugeot) {
 
 ## ❌ BAD EXAMPLE
 
-> If we replace the cars array pass by a sub cass brand card array as citroens = Citroen[] this function will be break
+> If we replace the cars array pass by a sub class brand card array as `citroens = Citroen[]` this function will be break
 
 ```ts
 export function printSeatsWrong(cars: Car[]): void {
@@ -110,7 +110,7 @@ export function printSeatsWrong(cars: Car[]): void {
 
 ## ✔️  GOOD EXAMPLE
 
-> In this case we could replace the cars array pass by a sub cass brand card array as citroens = Citroen[] without broke
+> In this case we could replace the cars array pass by a sub class brand card array as `citroens = Citroen[]` without broke
 
 ```ts
 /*
@@ -133,5 +133,4 @@ export function printSeatsOk(cars: Car[]): void {
     console.log(car.seats);
   }
 }
-
 ```

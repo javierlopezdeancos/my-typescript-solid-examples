@@ -26,8 +26,7 @@ export const cars: Car[] = [
 ];
 
 // ❌ This function is not ready to extend another brand into cars array,
-//    then we should modify
-//    with other if printAveragePrice function.
+//    then we should modify with other if function.
 
 export function printAveragePriceWrong(cars: Car[]): void {
   for (let c = 0; c < cars.length; c++) {
@@ -43,9 +42,10 @@ export function printAveragePriceWrong(cars: Car[]): void {
   }
 }
 
-// ✔️ In this case we have two classes with split responsibilities.
-//    CarLogger has the responsibility to log in console some actions
-//    to car injected by params.
+// ✔️ In this case we have
+//    * A base `Car` class
+//    * A class by `Brand` that implements the `IBrandCar` interface
+//    Both classes have split responsibilities.
 
 interface IBrandCar extends Car {
   averagePrice: number;
@@ -93,9 +93,20 @@ export const brandCars: IBrandCar[] = [
   new Peugeot("Yellow")
 ];
 
-// ✔️ This is ready to extend brandCars with other brand car
-//    without need to t ouch any line in
-//    printAveragePriceOk function
+// ✔️ * This is ready to extend brandCars with other brand car
+//    without need to touch any line in
+//    `printAveragePriceOk` function
+//.   * We can replace IBrandCar that we pass as param by a child class
+//    as `Mercedes[]` or `Citroen[]` without break the function.
+
+/*
+export function printAveragePriceOk(cars: Citroen[]): void {
+  for (let c = 0; c < cars.length; c++) {
+    const car = cars[c];
+    console.log(car.averagePrice);
+  }
+}
+*/
 
 export function printAveragePriceOk(cars: IBrandCar[]): void {
   for (let c = 0; c < cars.length; c++) {
